@@ -1,0 +1,18 @@
+ase-devel
+  git
+  vim
+  neovim
+  htop
+  curl
+  wget
+  python
+  gcc
+  make
+  bash-completion
+  tmux
+  openssh
+  rsync
+  networkmanager
+  firefox
+  unzip
+  zip

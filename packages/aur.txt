@@ -1,0 +1,5 @@
+visual-studio-code-bin
+discord
+telegram-desktop
+spotify
+pamac-aur
