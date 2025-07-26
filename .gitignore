@@ -7,3 +7,14 @@
 Thumbs.db
 .vscode/
 .idea/
+*.tar
+*.tar.*
+*.pkg.*
+*.xz
+*.zst
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+setup-*.log

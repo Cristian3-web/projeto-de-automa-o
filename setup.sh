@@ -1,12 +1,13 @@
 #!/bin/bash
 # Autor: Cristian
-# Projeto: Automação de instalação de pacotes no Arch Linux
+# Projeto: Automação de instalação de pacotes no terminal do Arch Linux
 # Descrição: Instala pacotes do pacman e do AUR automaticamente
+#use chmod +x setup.sh, depois sudo ./setup.sh
 
 set -euxo pipefail
 
-# Atualizando sistema base
-sudo pacman -Syu --noconfirm
+echo "Atualizando sistema base"
+pacman -Syu --noconfirm
 
 # Instalar yay se não existir
 if ! command -v yay &> /dev/null; then
@@ -20,9 +21,12 @@ else
     echo "yay já está instalado"
 fi
 
-# Atualizando pacotes AUR
+echo "Atualizando pacotes AUR"
 yay -Syu --noconfirm
 
-# Instalar pacotes listados nos arquivos
+echo "Instalar pacotes listados nos arquivos"
 xargs -a packages/pacman.txt sudo pacman -S --noconfirm
 xargs -a packages/aur.txt yay -S --noconfirm
+
+echo "Limpando arquivos temporários"
+rm -rf yay/ *.log *.tmp
